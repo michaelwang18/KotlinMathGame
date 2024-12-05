@@ -7,15 +7,14 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
+import androidx.fragment.app.findFragment
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
 
 class FirstFragment : Fragment() {
 
     private lateinit var textView: TextView
-    private var standardHighscore = 0
-    private var trigHighscore = 0
-    private var inverserTrigHighscore = 0
+    private lateinit var trigHigh: TextView
 
 
 
@@ -26,6 +25,7 @@ class FirstFragment : Fragment() {
         // Inflate the layout for this fragment
         val view: View = inflater.inflate(R.layout.fragment_first, container, false)
         textView = view.findViewById(R.id.textview_fragment1)
+        trigHigh = view.findViewById(R.id.trigScore)
         return view
     }
 
@@ -36,6 +36,9 @@ class FirstFragment : Fragment() {
         val navController: NavController = view.findNavController()
         firstToSecondButton.setOnClickListener { navController.navigate(R.id.navigate_first_to_second) }
         firstToThirdButton.setOnClickListener { navController.navigate(R.id.navigate_first_to_third) }
+        val activity: MainActivity = context as MainActivity
+        trigHigh.text = activity.getHighScore2().toString()
+
     }
 
     override fun onResume() {

@@ -1,7 +1,6 @@
 package com.example.myapplication
 
 import android.os.Bundle
-import android.provider.ContactsContract.CommonDataKinds.Im
 import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -10,11 +9,8 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.NavController
-import androidx.navigation.NavDestination
 import androidx.navigation.findNavController
-import org.w3c.dom.Text
 
 class SecondFragment : Fragment() {
 
@@ -49,10 +45,12 @@ class SecondFragment : Fragment() {
         val view: View = inflater.inflate(R.layout.fragment_second, container, false)
         textView = view.findViewById(R.id.textview_fragment2)
         question = view.findViewById(R.id.question)
+        questionImage = view.findViewById(R.id.QDis)
 
         answer1 = view.findViewById(R.id.answer1);  answer2 = view.findViewById(R.id.answer2);  answer3 = view.findViewById(R.id.answer3)
         AD1 = view.findViewById(R.id.ADis1);        AD2 = view.findViewById(R.id.ADis2);        AD3 = view.findViewById(R.id.ADis3)
-        AD1.scaleType = ImageView.ScaleType.CENTER; AD2.scaleType = ImageView.ScaleType.CENTER; AD3.scaleType = ImageView.ScaleType.CENTER
+        //AD1.scaleType = ImageView.ScaleType.CENTER; AD2.scaleType = ImageView.ScaleType.CENTER; AD3.scaleType = ImageView.ScaleType.CENTER
+
         score = view.findViewById(R.id.score)
 
         maxScore = view.findViewById(R.id.maxScore) //Takes from main activity, Single Source of Truth Thingy
@@ -92,9 +90,9 @@ class SecondFragment : Fragment() {
            // chooseAnswer(questionID) //Temp to Test
         }
 
-        AD1.setOnClickListener{ chooseAnswer(1) }
-        AD2.setOnClickListener{ chooseAnswer(2) }
-        AD3.setOnClickListener{ chooseAnswer(3) }
+        AD1.setOnClickListener{ chooseAnswer(0) }
+        AD2.setOnClickListener{ chooseAnswer(1) }
+        AD3.setOnClickListener{ chooseAnswer(2) }
        // answer1.setOnClickListener{ chooseAnswer(1) }
         //answer2.setOnClickListener{ chooseAnswer(2) }
         //answer3.setOnClickListener{ chooseAnswer(3) }
@@ -151,23 +149,23 @@ class SecondFragment : Fragment() {
         var answerImages: Array<ImageView> = arrayOf(AD1,AD2,AD3)
         questionImage.setImageResource(R.drawable.lego_computer)//Test
 
-        if (questionID == 1){ questionImage.setImageResource(R.drawable.q1) }
-        if (questionID == 2){ questionImage.setImageResource(R.drawable.q2) }
-        if (questionID == 3){ questionImage.setImageResource(R.drawable.q3) }
-        if (questionID == 4){ questionImage.setImageResource(R.drawable.q4) }
-        if (questionID == 5){ questionImage.setImageResource(R.drawable.q5) }
-        if (questionID == 6){ questionImage.setImageResource(R.drawable.q6) }
+        if (questionID == 0){ questionImage.setImageResource(R.drawable.q1) }
+        if (questionID == 1){ questionImage.setImageResource(R.drawable.q2) }
+        if (questionID == 2){ questionImage.setImageResource(R.drawable.q3) }
+        if (questionID == 3){ questionImage.setImageResource(R.drawable.q4) }
+        if (questionID == 4){ questionImage.setImageResource(R.drawable.q5) }
+        if (questionID == 5){ questionImage.setImageResource(R.drawable.q6) }
         
 
         for(nums in 0..2){
             answerImages[nums].setImageResource(R.drawable.lego_computer)//Test
 
-            if (answers[nums] == 1){ answerImages[nums].setImageResource(R.drawable.a1) }
-            if (answers[nums] == 2){ answerImages[nums].setImageResource(R.drawable.a2) }
-            if (answers[nums] == 3){ answerImages[nums].setImageResource(R.drawable.a3) }
-            if (answers[nums] == 4){ answerImages[nums].setImageResource(R.drawable.a4) }
-            if (answers[nums] == 5){ answerImages[nums].setImageResource(R.drawable.a5) }
-            if (answers[nums] == 6){ answerImages[nums].setImageResource(R.drawable.a6) }
+            if (answers[nums] == 0){ answerImages[nums].setImageResource(R.drawable.a1) }
+            if (answers[nums] == 1){ answerImages[nums].setImageResource(R.drawable.a2) }
+            if (answers[nums] == 2){ answerImages[nums].setImageResource(R.drawable.a3) }
+            if (answers[nums] == 3){ answerImages[nums].setImageResource(R.drawable.a4) }
+            if (answers[nums] == 4){ answerImages[nums].setImageResource(R.drawable.a5) }
+            if (answers[nums] == 5){ answerImages[nums].setImageResource(R.drawable.a6) }
         }
 
 
@@ -186,11 +184,12 @@ class SecondFragment : Fragment() {
 
 
     fun chooseAnswer(answerIndex: Int){
-        if (answerIndex == questionID){
+        if (answers[answerIndex] == questionID){
             addScore()
         } else
         {
             currentScore = 0;
+            score.text = currentScore.toString()
         }
         changeQuestion()
 
