@@ -24,6 +24,9 @@ class SecondFragment : Fragment(), NavController.OnDestinationChangedListener  {
     private lateinit var answer3: TextView
     private var allQuestions: Array<String> = arrayOf("1","2","3","4","5","6")
     private var allAnswers: Array<String> = arrayOf("1","2","3","4","5","6")
+    private var currentScore = 0
+    private var highScore = 0
+    private var questionID = -1
 
 
     override fun onCreateView(
@@ -39,6 +42,8 @@ class SecondFragment : Fragment(), NavController.OnDestinationChangedListener  {
         answer3 = view.findViewById(R.id.answer3)
         score = view.findViewById(R.id.score)
         maxScore = view.findViewById(R.id.maxScore)
+        val activity: MainActivity = context as MainActivity
+        highScore = activity.getHighScore2()
         return view
 
 
@@ -69,7 +74,10 @@ class SecondFragment : Fragment(), NavController.OnDestinationChangedListener  {
 
         question.setOnClickListener{
             changeQuestion()
+            chooseAnswer(questionID)
         }
+
+
 
 
 
@@ -93,12 +101,30 @@ class SecondFragment : Fragment(), NavController.OnDestinationChangedListener  {
 
     fun changeQuestion(){
         var currentQuestion = (Math.random() * 6).toInt()
+        questionID = currentQuestion
         Log.i("SecondFragment", currentQuestion.toString())
 
         question.text = allQuestions[currentQuestion]
+    }
+
+    fun chooseAnswer(answerIndex: Int){
+        if (answerIndex == questionID){
+            addScore()
+        } else
+        {
+            currentScore = 0;
+        }
 
 
+    }
 
+    fun addScore(){
+        currentScore += 1
+        if (currentScore > highScore){
+            highScore = currentScore
+            maxScore.text = highScore.toString()
+        }
+        score.text = currentScore.toString()
 
 
     }

@@ -22,6 +22,7 @@ class MainActivity : AppCompatActivity(), NavController.OnDestinationChangedList
     private lateinit var appBarConfig: AppBarConfiguration
     private lateinit var navController: NavController
     private lateinit var navDrawer: DrawerLayout
+    private var highScore2 = 0
     private var shareMessage: String = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -38,6 +39,17 @@ class MainActivity : AppCompatActivity(), NavController.OnDestinationChangedList
         navigationView.setupWithNavController(navController)
         navController.addOnDestinationChangedListener(this)
     }
+
+    fun getHighScore2(): Int {
+        return highScore2
+    }
+
+    fun setHighScore2(newNum: Int) {
+        highScore2 = newNum
+    }
+
+
+
 
     override fun onSupportNavigateUp(): Boolean {
         val success: Boolean = navController.navigateUp(appBarConfig)
