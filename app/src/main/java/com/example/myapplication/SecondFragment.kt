@@ -201,6 +201,9 @@ class SecondFragment : Fragment() {
         if (currentScore > highScore){
             highScore = currentScore
             maxScore.text = highScore.toString()
+            val activity: MainActivity = context as MainActivity
+            activity.setHighScore2(currentScore)
+
         }
         score.text = currentScore.toString()
 
