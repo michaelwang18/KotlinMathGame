@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Navigation Demo</string>
+    <string name="fragment_four">Fragment Four</string>
+    <string name="fragment_five">Fragment Five</string>
+    <string name="fragment_one">Fragment One</string>
+    <string name="fragment_two">Fragment Two</string>
+    <string name="fragment_three">Fragment Three</string>
+    <string name="image_of_lego_computer">image of lego computer</string>
+    <string name="navigation_app">Navigation App</string>
+    <string name="brooklyn_technical_h_s">Brooklyn Technical H.S.</string>
+</resources>
