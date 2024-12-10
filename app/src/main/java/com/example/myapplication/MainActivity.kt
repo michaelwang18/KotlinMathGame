@@ -23,6 +23,8 @@ class MainActivity : AppCompatActivity(), NavController.OnDestinationChangedList
     private lateinit var navController: NavController
     private lateinit var navDrawer: DrawerLayout
     private var highScore2 = 0
+    private var highScore3 = 0
+    private var highScore4 = 0
     private var shareMessage: String = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -48,6 +50,21 @@ class MainActivity : AppCompatActivity(), NavController.OnDestinationChangedList
         highScore2 = newNum
     }
 
+    fun getHighScore3(): Int {
+        return highScore3
+    }
+
+    fun setHighScore3(newNum: Int) {
+        highScore3 = newNum
+    }
+
+    fun getHighScore4(): Int {
+        return highScore4
+    }
+
+    fun setHighScore4(newNum: Int) {
+        highScore4 = newNum
+    }
 
 
 
