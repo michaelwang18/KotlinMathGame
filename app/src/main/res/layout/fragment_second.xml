@@ -4,22 +4,31 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFAEAE"
+    android:background="@drawable/snowgradient"
     tools:context=".SecondFragment">
 
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/snowcap"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="76dp" />
 
     <TextView
         android:id="@+id/scoreText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="76dp"
+        android:layout_marginTop="164dp"
         android:text="Score: "
+        android:textColor="#48924C"
         android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
+        android:textColor="@color/white"
         android:id="@+id/score"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -31,6 +40,7 @@
 
     <TextView
         android:id="@+id/maxScoreText"
+        android:textColor="#236228"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -41,6 +51,7 @@
         app:layout_constraintTop_toBottomOf="@+id/scoreText" />
 
     <TextView
+        android:textColor="@color/white"
         android:id="@+id/maxScore"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -51,44 +62,17 @@
         app:layout_constraintStart_toStartOf="@+id/score"
         app:layout_constraintTop_toTopOf="@+id/maxScoreText" />
 
-    <TextView
-        android:id="@+id/question"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Very Cool Question"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.409" />
 
-    <TextView
-        android:id="@+id/answer1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Answer1"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="@+id/answer2"
-        app:layout_constraintEnd_toStartOf="@+id/answer2"
-        app:layout_constraintHorizontal_bias="0.484"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/answer2"
-        app:layout_constraintVertical_bias="0.397" />
-
-    <TextView
-        android:id="@+id/answer2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Answer2"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.528"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/question"
-        app:layout_constraintVertical_bias="0.113" />
+    <ImageView
+        android:id="@+id/QDis"
+        android:layout_width="202dp"
+        android:layout_height="97dp"
+        app:layout_constraintBottom_toBottomOf="@+id/question"
+        app:layout_constraintEnd_toEndOf="@+id/question"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/question"
+        app:layout_constraintTop_toTopOf="@+id/question"
+        app:layout_constraintVertical_bias="0.523" />
 
     <TextView
         android:id="@+id/answer3"
@@ -98,31 +82,10 @@
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="@+id/answer2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.56"
+        app:layout_constraintHorizontal_bias="0.581"
         app:layout_constraintStart_toEndOf="@+id/answer2"
         app:layout_constraintTop_toTopOf="@+id/answer2"
-        app:layout_constraintVertical_bias="0.397" />
-
-
-    <ImageView
-        android:id="@+id/QDis"
-        android:layout_width="202dp"
-        android:layout_height="97dp"
-        app:layout_constraintBottom_toBottomOf="@+id/question"
-        app:layout_constraintEnd_toEndOf="@+id/question"
-        app:layout_constraintHorizontal_bias="0.539"
-        app:layout_constraintStart_toStartOf="@+id/question"
-        app:layout_constraintTop_toTopOf="@+id/question"
-        app:layout_constraintVertical_bias="1.0" />
-
-    <ImageView
-        android:id="@+id/ADis1"
-        android:layout_width="113dp"
-        android:layout_height="55dp"
-        app:layout_constraintBottom_toBottomOf="@+id/answer1"
-        app:layout_constraintEnd_toEndOf="@+id/answer1"
-        app:layout_constraintStart_toStartOf="@+id/answer1"
-        app:layout_constraintTop_toTopOf="@+id/answer1" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <ImageView
         android:id="@+id/ADis2"
@@ -130,8 +93,23 @@
         android:layout_height="55dp"
         app:layout_constraintBottom_toBottomOf="@+id/answer2"
         app:layout_constraintEnd_toEndOf="@+id/answer2"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/answer2"
-        app:layout_constraintTop_toTopOf="@+id/answer2" />
+        app:layout_constraintTop_toTopOf="@+id/answer2"
+        app:layout_constraintVertical_bias="0.565" />
+
+    <TextView
+        android:id="@+id/answer1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Answer1"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="@+id/answer2"
+        app:layout_constraintEnd_toStartOf="@+id/answer2"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/answer2"
+        app:layout_constraintVertical_bias="0.0" />
 
     <ImageView
         android:id="@+id/ADis3"
@@ -140,26 +118,65 @@
         app:layout_constraintBottom_toBottomOf="@+id/answer3"
         app:layout_constraintEnd_toEndOf="@+id/answer3"
         app:layout_constraintStart_toStartOf="@+id/answer3"
-        app:layout_constraintTop_toTopOf="@+id/answer3" />
+        app:layout_constraintTop_toTopOf="@+id/answer3"
+        app:layout_constraintVertical_bias="0.608" />
+
+    <TextView
+        android:id="@+id/answer2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Answer2"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/question"
+        app:layout_constraintVertical_bias="0.15" />
+
+    <TextView
+        android:id="@+id/question"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Very Cool Question"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.507"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.535" />
 
 
-
+    <ImageView
+        android:id="@+id/ADis1"
+        android:layout_width="113dp"
+        android:layout_height="55dp"
+        app:layout_constraintBottom_toBottomOf="@+id/answer1"
+        app:layout_constraintEnd_toEndOf="@+id/answer1"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/answer1"
+        app:layout_constraintTop_toTopOf="@+id/answer1"
+        app:layout_constraintVertical_bias="0.521" />
 
     <Button
         android:id="@+id/button_two_to_three"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="Home"
+        android:layout_marginTop="8dp"
+        android:backgroundTint="#E18080"
+        android:text="Return"
         app:layout_constraintEnd_toEndOf="@+id/textview_fragment2"
+        app:layout_constraintHorizontal_bias="0.476"
         app:layout_constraintStart_toStartOf="@+id/textview_fragment2"
         app:layout_constraintTop_toBottomOf="@+id/textview_fragment2" />
 
     <TextView
+        android:textColor="#E18080"
         android:id="@+id/textview_fragment2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Return"
+        android:text="Finished?"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

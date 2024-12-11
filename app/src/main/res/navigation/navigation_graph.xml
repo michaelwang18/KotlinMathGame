@@ -60,4 +60,12 @@
         app:exitAnim="@anim/custom_fade_out"
         app:popEnterAnim="@anim/custom_slide_in_left"
         app:popExitAnim="@anim/custom_slide_out_right" />
+
+    <action
+        android:id="@+id/navigate_to_first_global"
+        app:destination="@id/firstFragment"
+        app:enterAnim="@anim/custom_fade_in"
+        app:exitAnim="@anim/custom_fade_out"
+        app:popEnterAnim="@anim/custom_slide_in_left"
+        app:popExitAnim="@anim/custom_slide_out_right" />
 </navigation>

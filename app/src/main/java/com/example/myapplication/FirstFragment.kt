@@ -31,11 +31,7 @@ class FirstFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val firstToSecondButton: Button = view.findViewById(R.id.button)
-        val firstToThirdButton: Button = view.findViewById(R.id.button_one_to_three)
         val navController: NavController = view.findNavController()
-        firstToSecondButton.setOnClickListener { navController.navigate(R.id.navigate_first_to_second) }
-        firstToThirdButton.setOnClickListener { navController.navigate(R.id.navigate_first_to_third) }
         val activity: MainActivity = context as MainActivity
         trigHigh.text = activity.getHighScore2().toString()
 

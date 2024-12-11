@@ -55,7 +55,7 @@ class ThirdFragment : Fragment() {
 
         maxScore = view.findViewById(R.id.maxScore) //Takes from main activity, Single Source of Truth Thingy
         val activity: MainActivity = context as MainActivity
-        highScore = activity.getHighScore2()
+        highScore = activity.getHighScore3()
         return view
 
 
@@ -185,7 +185,7 @@ class ThirdFragment : Fragment() {
             highScore = currentScore
             maxScore.text = highScore.toString()
             val activity: MainActivity = context as MainActivity
-            activity.setHighScore2(currentScore)
+            activity.setHighScore3(currentScore)
 
         }
         score.text = currentScore.toString()

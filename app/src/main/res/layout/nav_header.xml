@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="176dp"
     android:background="@drawable/gradient"
@@ -10,25 +12,43 @@
     android:paddingEnd="16dp"
     android:paddingBottom="16dp">
 
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:gravity="end"
+        android:text="Menu"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textSize="35dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="end"
+        android:text="Derivative Identities Practice"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textSize="13dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/textView2"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/textView2" />
+
+
     <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="64dp"
-        android:contentDescription="@string/image_of_lego_computer"
-        android:scaleType="fitStart"
-        android:src="@drawable/lego_computer" />
+        android:id="@+id/imageView"
+        android:layout_width="99dp"
+        android:layout_height="113dp"
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="@string/navigation_app"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:text="@string/brooklyn_technical_h_s"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
-
-</LinearLayout>
+        android:contentDescription="Wreath!!! Yippie"
+        android:src="@drawable/wreath"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
