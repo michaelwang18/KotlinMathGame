@@ -11,6 +11,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
+import kotlin.math.max
 
 class SecondFragment : Fragment() {
 
@@ -65,20 +66,14 @@ class SecondFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val args: Bundle? = arguments // synthetic property from getArguments/setArguments
-        if (args != null) {
-            val strArg: String? = args.getString("name")
-            val intArg: Int = args.getInt("faveNumber") // returns 0 rather than null
-            val textView: TextView = view.findViewById(R.id.textview_fragment2) // textView2 is ID for the textView in the third fragment (yikes forgot to change this ID)
-            textView.text = "$strArg $intArg"
+
+        maxScore.text = highScore.toString()
+        val returnHome: Button = view.findViewById(R.id.returnHome)
+        val navController: NavController = view.findNavController()
+        returnHome.setOnClickListener{
+            navController.navigate(R.id.firstFragment)
         }
 
-
-
-
-
-        val secondToThirdButton: Button = view.findViewById(R.id.button_two_to_three)
-        val navController: NavController = view.findNavController()
 
 
         changeQuestion()
@@ -96,19 +91,6 @@ class SecondFragment : Fragment() {
        // answer1.setOnClickListener{ chooseAnswer(1) }
         //answer2.setOnClickListener{ chooseAnswer(2) }
         //answer3.setOnClickListener{ chooseAnswer(3) }
-
-
-
-
-
-        secondToThirdButton.setOnClickListener {  //Needs to adjust
-            val data: Bundle = Bundle()
-            data.putString("name", "Screen")
-            data.putInt("faveNumber", 3)
-            navController.navigate(R.id.navigate_second_to_third, data)
-        }
-
-
 
     }
 

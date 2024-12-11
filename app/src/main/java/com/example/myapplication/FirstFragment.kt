@@ -15,7 +15,8 @@ class FirstFragment : Fragment() {
 
     private lateinit var textView: TextView
     private lateinit var trigHigh: TextView
-
+    private lateinit var trigInverseHigh: TextView
+    private lateinit var ruleHigh: TextView
 
 
     override fun onCreateView(
@@ -26,6 +27,8 @@ class FirstFragment : Fragment() {
         val view: View = inflater.inflate(R.layout.fragment_first, container, false)
         textView = view.findViewById(R.id.textview_fragment1)
         trigHigh = view.findViewById(R.id.trigScore)
+        ruleHigh = view.findViewById(R.id.ruleScore)
+        trigInverseHigh = view.findViewById(R.id.trigInverseScore)
         return view
     }
 
@@ -34,6 +37,8 @@ class FirstFragment : Fragment() {
         val navController: NavController = view.findNavController()
         val activity: MainActivity = context as MainActivity
         trigHigh.text = activity.getHighScore2().toString()
+        trigInverseHigh.text = activity.getHighScore3().toString()
+        ruleHigh.text = activity.getHighScore4().toString()
 
     }
 

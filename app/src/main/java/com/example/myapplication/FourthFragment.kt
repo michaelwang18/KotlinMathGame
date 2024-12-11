@@ -66,8 +66,12 @@ class FourthFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
 
-        val secondToThirdButton: Button = view.findViewById(R.id.button_two_to_three)
+        maxScore.text = highScore.toString()
+        val returnHome: Button = view.findViewById(R.id.returnHome)
         val navController: NavController = view.findNavController()
+        returnHome.setOnClickListener{
+            navController.navigate(R.id.firstFragment)
+        }
 
 
         changeQuestion()
@@ -85,19 +89,6 @@ class FourthFragment : Fragment() {
         // answer1.setOnClickListener{ chooseAnswer(1) }
         //answer2.setOnClickListener{ chooseAnswer(2) }
         //answer3.setOnClickListener{ chooseAnswer(3) }
-
-
-
-
-
-        secondToThirdButton.setOnClickListener {  //Needs to adjust
-            val data: Bundle = Bundle()
-            data.putString("name", "Screen")
-            data.putInt("faveNumber", 3)
-            navController.navigate(R.id.navigate_second_to_third, data)
-        }
-
-
 
     }
 
@@ -155,7 +146,7 @@ class FourthFragment : Fragment() {
                 questionImage.setImageResource(R.drawable.p3a4)
             }
             if (questionID == 4) {
-                questionImage.setImageResource(R.drawable.p3a5)
+                questionImage.setImageResource(R.drawable.p3a3)
             }
 
             for (nums in 0..2) {

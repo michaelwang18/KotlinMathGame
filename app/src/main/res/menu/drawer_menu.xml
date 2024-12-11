@@ -4,15 +4,16 @@
 
     <item
         android:id="@+id/secondFragment"
-        android:icon="@android:drawable/ic_dialog_alert"
-        android:title="@string/fragment_two" />
+        android:icon="@drawable/ornament"
+        android:title="Trig Derivatives" />
     <item
         android:id="@+id/thirdFragment"
-        android:icon="@android:drawable/ic_dialog_map"
-        android:title="@string/fragment_three" />
+        android:icon="@drawable/ornament"
+        android:title="Trig Inverse Derivatives"
+        />
 
     <item
         android:id="@+id/fourthFragment"
-        android:icon="@android:drawable/ic_dialog_map"
-        android:title="@string/fragment_four" />
+        android:icon="@drawable/ornament"
+        android:title="Derivative Rules" />
 </menu>
