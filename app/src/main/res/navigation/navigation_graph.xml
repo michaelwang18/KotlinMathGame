@@ -48,11 +48,6 @@
         android:name="com.example.myapplication.FourthFragment"
         android:label="@string/fragment_four"
         tools:layout="@layout/fragment_fourth" />
-    <fragment
-        android:id="@+id/fifthFragment"
-        android:name="com.example.myapplication.FifthFragment"
-        android:label="@string/fragment_five"
-        tools:layout="@layout/fragment_fifth" />
     <action
         android:id="@+id/navigate_to_fourth_global"
         app:destination="@id/fourthFragment"

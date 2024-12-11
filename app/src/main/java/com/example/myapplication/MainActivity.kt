@@ -31,6 +31,8 @@ class MainActivity : AppCompatActivity(), NavController.OnDestinationChangedList
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         setSupportActionBar(findViewById(R.id.action_bar))
+
+
         val navHostFragment = supportFragmentManager.findFragmentById(R.id.fragmentContainerView) as NavHostFragment
         navController = navHostFragment.navController
         val navGraph = navController.graph
@@ -80,12 +82,14 @@ class MainActivity : AppCompatActivity(), NavController.OnDestinationChangedList
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {   //Share Stuff
-        if (item.itemId == R.id.menu_item_fragment_four) {
-            navController.navigate(R.id.navigate_to_fourth_global)
+        if (item.itemId == R.id.fourthFragment) {
+            navController.navigate(R.id.fourthFragment)
             return true
-        } else if (item.itemId == R.id.menu_item_share) {
-            val shareIntent: Intent = createIntent(shareMessage)
-            startActivity(shareIntent)
+        } else if (item.itemId == R.id.thirdFragment) {
+            navController.navigate(R.id.thirdFragment)
+            return true
+        } else if (item.itemId == R.id.secondFragment){
+            navController.navigate(R.id.secondFragment)
             return true
         }
         return super.onOptionsItemSelected(item)
